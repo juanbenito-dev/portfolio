@@ -5,9 +5,9 @@ import { useState } from "react";
 import Hamburger from "@/app/components/icons/hamburger";
 
 const links = [
-  { name: "Proyectos", href: "/projects" },
-  { name: "Sobre mí", href: "/about" },
-  { name: "Contacto", href: "/contact" },
+  { name: "Projects", href: "/projects" },
+  { name: "About", href: "/about" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export default function Nav() {

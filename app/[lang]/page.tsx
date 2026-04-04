@@ -1,53 +1,17 @@
-import Express from "../components/icons/express";
-import Git from "../components/icons/git";
+import Eye from "../components/icons/eye";
 import GitHub from "../components/icons/github";
-import Laravel from "../components/icons/laravel";
 import LinkedIn from "../components/icons/linkedin";
-import Nextjs from "../components/icons/nextjs";
-import React from "../components/icons/react";
-import TailwindCSS from "../components/icons/tailwindcss";
-import TypeScript from "../components/icons/typescript";
 import Project from "../components/project";
+import { featuredSkills } from "../data/featured-skills";
 import { projects } from "../data/projects";
 import { getDictionary } from "./dictionaries";
 import { LangParams } from "@/i18n";
 import Image from "next/image";
 import Link from "next/link";
 
-const featuredSkills = [
-  { icon: <Nextjs />, name: "Next.js", href: "https://nextjs.org/" },
-  { icon: <React />, name: "React", href: "https://react.dev/" },
-  {
-    icon: <TypeScript />,
-    name: "TypeScript",
-    href: "https://www.typescriptlang.org/",
-  },
-  {
-    icon: <TailwindCSS />,
-    name: "Tailwind CSS",
-    href: "https://tailwindcss.com/",
-  },
-  {
-    icon: <Express />,
-    name: "Express",
-    href: "https://expressjs.com/",
-  },
-  {
-    icon: <Laravel />,
-    name: "Laravel",
-    href: "https://laravel.com/",
-  },
-  {
-    icon: <Git />,
-    name: "Git",
-    href: "https://git-scm.com/",
-  },
-];
-
-const featuredProjects = projects.filter((project) => project.featured);
-featuredProjects.forEach((project) => {
-  delete project.featured;
-});
+const featuredProjects = projects
+  .filter((project) => project.featured)
+  .map(({ featured, ...project }) => project);
 
 export default async function Home({ params }: LangParams) {
   const { lang } = await params;
@@ -55,7 +19,7 @@ export default async function Home({ params }: LangParams) {
   const dict = await getDictionary(lang);
 
   return (
-    <div>
+    <>
       {/* "Available" button */}
       <Link
         href="/contact"
@@ -72,12 +36,12 @@ export default async function Home({ params }: LangParams) {
       {/* Introduction */}
       <section className="bg-tertiary mx-auto flex w-7/8 flex-col items-center gap-5 rounded-xl p-5 text-center">
         <h1 className="text-xl">
-          ¡Hey, aquí <strong>Juan Benito</strong>!
+          Hey, it's <strong>Juan Benito</strong>!
         </h1>
 
         <Image
           src="/my-avatar.webp"
-          alt="Avatar 3D de Juan Benito"
+          alt="Juan Benito's 3D avatar"
           width={300}
           height={300}
           loading="eager"
@@ -85,8 +49,8 @@ export default async function Home({ params }: LangParams) {
         />
 
         <p>
-          <strong>Desarrollador frontend</strong> especializado en crear
-          experiencias web modernas, rápidas y centradas en el usuario.
+          <strong>Front-end developer</strong> specializing in creating modern,
+          fast, and user-centered web experiences.
         </p>
 
         <div className="flex gap-x-4">
@@ -94,7 +58,10 @@ export default async function Home({ params }: LangParams) {
             <GitHub />
           </a>
 
-          <a href="https://www.linkedin.com/in/juanbenito-dev/" target="_blank">
+          <a
+            href="https://www.linkedin.com/in/juanbenito-dev/?locale=en-US"
+            target="_blank"
+          >
             <LinkedIn />
           </a>
         </div>
@@ -103,17 +70,17 @@ export default async function Home({ params }: LangParams) {
       {/* "+X..." cards */}
       <section className="mx-auto my-5 flex w-7/8 gap-x-5">
         <p className="bg-tertiary flex-1 rounded-xl p-5 text-center">
-          <strong className="block text-5xl">+X</strong> AÑOS EN EL CAMPO
+          <strong className="block text-5xl">+X</strong> YEARS IN THE FIELD
         </p>
 
         <p className="bg-tertiary flex-1 rounded-xl p-5 text-center">
-          <strong className="block text-5xl">+X</strong> PROYECTOS TRABAJADOS
+          <strong className="block text-5xl">+X</strong> PROJECTS COMPLETED
         </p>
       </section>
 
       {/* Featured skills */}
       <section className="m-5 text-center">
-        <h2 className="mb-5 text-xl">HABILIDADES DESTACADAS</h2>
+        <h2 className="mb-5 text-xl">FEATURED SKILLS</h2>
 
         <div className="flex flex-wrap justify-center gap-5">
           {featuredSkills.map((featuredSkill) => (
@@ -133,7 +100,17 @@ export default async function Home({ params }: LangParams) {
 
       {/* Featured projects */}
       <section className="mx-auto my-5 w-7/8 text-center">
-        <h2 className="mb-5 text-xl">PROYECTOS DESTACADOS</h2>
+        <div className="mb-5 flex items-center justify-center gap-x-5">
+          <h2 className="text-xl">FEATURED PROJECTS</h2>
+
+          <Link
+            href="/projects"
+            className="bg-primary flex items-center justify-center gap-x-2 rounded-xl p-3 transition hover:brightness-110"
+          >
+            See all
+            <Eye />
+          </Link>
+        </div>
 
         <div className="flex flex-wrap justify-center gap-5">
           {featuredProjects.map((featuredProject) => (
@@ -141,6 +118,6 @@ export default async function Home({ params }: LangParams) {
           ))}
         </div>
       </section>
-    </div>
+    </>
   );
 }

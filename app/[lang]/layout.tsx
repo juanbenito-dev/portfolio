@@ -11,9 +11,9 @@ type RootLayoutProps = {
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Juan Benito | Desarrollador Frontend",
+  title: "Juan Benito | Front-end Developer",
   description:
-    "Portfolio de Juan Benito, un desarrollador frontend especializado en React y Next.js. Explora mis proyectos, habilidades y experiencia en el desarrollo web moderno.",
+    "Juan Benito's portfolio, a front-end developer specializing in React and Next.js. Explore my skills, projects, and experience in modern web development.",
 };
 
 export default async function RootLayout({

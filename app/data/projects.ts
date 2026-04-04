@@ -1,7 +1,8 @@
+import { CarouselImg } from "../types";
+
 export type Project = {
   featured?: boolean;
-  src: string;
-  alt: string;
+  carouselImgs: CarouselImg[];
   techStack: string[];
   name: string;
   description: string;
@@ -11,14 +12,79 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    featured: true,
-    src: "/projects/old-mans-house/entry.png",
-    alt: "",
+    featured: false,
+    carouselImgs: [
+      {
+        src: "/projects/old-mans-house/entrance.webp",
+        alt: "The entrance to the house of a mysterious old man",
+      },
+      {
+        src: "/projects/old-mans-house/living-room.webp",
+        alt: "The house's living room, filled with rather interesting paintings and other objects",
+      },
+      {
+        src: "/projects/old-mans-house/main-bedroom.webp",
+        alt: "The main bedroom, featuring an impressive crossbow and elegant furniture",
+      },
+    ],
     techStack: ["HTML", "CSS", "JavaScript", "Bootstrap"],
     name: "Old Man's House",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent feugiat, nisi accumsan porttitor dapibus, turpis augue posuere velit, ac commodo dui turpis at neque.",
+      "A website optimized for both mobile devices and computers that simulates a visit to the home of a mysterious old man...",
     deploymentHref: "https://old-mans-house.vercel.app/",
     sourceCodeHref: "https://github.com/juanbenito-dev/old-mans-house",
+  },
+  {
+    featured: true,
+    carouselImgs: [
+      {
+        src: "/projects/chaoswb/main-menu.webp",
+        alt: "'Chaos Within Chaos Beyond' video game's main menu",
+      },
+      {
+        src: "/projects/chaoswb/level.webp",
+        alt: "The video game's first level, full of enemies, a healing potion and the player themselves",
+      },
+      {
+        src: "/projects/chaoswb/story.webp",
+        alt: "The video game's story screen",
+      },
+    ],
+    techStack: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Node.js",
+      "Express.js",
+      "PostgreSQL",
+    ],
+    name: "Chaos Within Chaos Beyond",
+    description:
+      "Similar to the well-known 'Super Mario Bros.', this short but intense video game presents a clear challenge: escape from a cave filled with all kinds of threats.",
+    deploymentHref: "https://chaoswb.onrender.com/",
+    sourceCodeHref: "https://github.com/juanbenito-dev/chaoswb",
+  },
+  {
+    featured: true,
+    carouselImgs: [
+      {
+        src: "/projects/the-potions-of-simon/start-screen.webp",
+        alt: "'The Potions of Simon' start screen",
+      },
+      {
+        src: "/projects/the-potions-of-simon/game.webp",
+        alt: "'The Potions of Simon' game (first turn)",
+      },
+      {
+        src: "/projects/the-potions-of-simon/defeat-modal.webp",
+        alt: "The defeat modal shown after failing the potions' sequence",
+      },
+    ],
+    techStack: ["React", "CSS"],
+    name: "The Potions of Simon",
+    description:
+      "A medieval-themed memory game inspired by 'Simon Says'. At the start of each turn, a sequence of potions lights up in a specific order. Then, players must reproduce it correctly. One mistake ends the run, challenging players to beat their best score.",
+    deploymentHref: "https://potions-simon.vercel.app/",
+    sourceCodeHref: "https://github.com/juanbenito-dev/the-potions-of-simon",
   },
 ];

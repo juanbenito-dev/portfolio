@@ -1,13 +1,12 @@
 import { Project as ProjectType } from "../data/projects";
+import Carousel from "./carousel";
 import ArrowAngularTopRight from "./icons/arrow-angular-top-right";
 import Code from "./icons/code";
-import Image from "next/image";
 
 type ProjectProps = Omit<ProjectType, "featured">;
 
 export default function Project({
-  src,
-  alt,
+  carouselImgs,
   techStack,
   name,
   description,
@@ -15,13 +14,11 @@ export default function Project({
   sourceCodeHref,
 }: ProjectProps) {
   return (
-    <div className="bg-tertiary rounded-xl">
-      <Image
-        src={src}
-        alt={alt}
-        width={300}
-        height={300}
-        className="w-full rounded-t-xl"
+    <div className="bg-tertiary flex-1 rounded-xl">
+      <Carousel
+        imgs={carouselImgs}
+        parentClassName="h-60 rounded-t-xl"
+        imgsClassName="absolute h-full w-full object-cover rounded-t-xl"
       />
 
       <div className="flex flex-col gap-y-5 p-5">
@@ -46,7 +43,7 @@ export default function Project({
             target="_blank"
             className="flex items-center gap-x-2.5"
           >
-            Visitar <ArrowAngularTopRight />
+            Visit <ArrowAngularTopRight />
           </a>
 
           <a
@@ -54,7 +51,7 @@ export default function Project({
             target="_blank"
             className="flex items-center gap-x-2.5"
           >
-            Código <Code />
+            Code <Code />
           </a>
         </div>
       </div>
