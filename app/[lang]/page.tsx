@@ -6,8 +6,15 @@ import { featuredSkills } from "../data/featured-skills";
 import { projects } from "../data/projects";
 import { getDictionary } from "./dictionaries";
 import { LangParams } from "@/i18n";
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Juan Benito | Web Developer",
+  description:
+    "Juan Benito's portfolio, a web developer building modern, scalable web applications. Explore my skills, projects, and much more.",
+};
 
 const featuredProjects = projects
   .filter((project) => project.featured)
@@ -19,7 +26,7 @@ export default async function Home({ params }: LangParams) {
   const dict = await getDictionary(lang);
 
   return (
-    <>
+    <main>
       {/* "Available" button */}
       <Link
         href="/contact"
@@ -35,8 +42,15 @@ export default async function Home({ params }: LangParams) {
 
       {/* Introduction */}
       <section className="bg-tertiary mx-auto flex w-7/8 flex-col items-center gap-5 rounded-xl p-5 text-center">
-        <h1 className="text-xl">
-          Hey, it's <strong>Juan Benito</strong>!
+        <h1 className="text-2xl">
+          Hey, it's{" "}
+          <Link
+            href="/about"
+            className="decoration-neutral decoration font-bold underline decoration-dashed decoration-2 underline-offset-2"
+          >
+            Juan Benito
+          </Link>
+          !
         </h1>
 
         <Image
@@ -49,8 +63,16 @@ export default async function Home({ params }: LangParams) {
         />
 
         <p>
-          <strong>Front-end developer</strong> specializing in creating modern,
-          fast, and user-centered web experiences.
+          A <strong>web developer</strong> focused on building modern, fast,
+          user-centered experiences. I approach development as a balance between
+          structure and creativity, writing clean, well-organized code with
+          strong attention to detail.
+        </p>
+
+        <p>
+          I'm always exploring new tools and ideas, using each project as an
+          opportunity to grow and create work that is both meaningful and
+          enjoyable.
         </p>
 
         <div className="flex gap-x-4">
@@ -70,17 +92,17 @@ export default async function Home({ params }: LangParams) {
       {/* "+X..." cards */}
       <section className="mx-auto my-5 flex w-7/8 gap-x-5">
         <p className="bg-tertiary flex-1 rounded-xl p-5 text-center">
-          <strong className="block text-5xl">+X</strong> YEARS IN THE FIELD
+          <strong className="block text-5xl">+3</strong> YEARS IN THE FIELD
         </p>
 
         <p className="bg-tertiary flex-1 rounded-xl p-5 text-center">
-          <strong className="block text-5xl">+X</strong> PROJECTS COMPLETED
+          <strong className="block text-5xl">+9</strong> PROJECTS COMPLETED
         </p>
       </section>
 
       {/* Featured skills */}
       <section className="m-5 text-center">
-        <h2 className="mb-5 text-xl">FEATURED SKILLS</h2>
+        <h2 className="mb-5 text-2xl">FEATURED SKILLS</h2>
 
         <div className="flex flex-wrap justify-center gap-5">
           {featuredSkills.map((featuredSkill) => (
@@ -90,9 +112,7 @@ export default async function Home({ params }: LangParams) {
             >
               {featuredSkill.icon}
 
-              <a href={featuredSkill.href} target="_blank">
-                {featuredSkill.name}
-              </a>
+              <span>{featuredSkill.name}</span>
             </div>
           ))}
         </div>
@@ -101,7 +121,7 @@ export default async function Home({ params }: LangParams) {
       {/* Featured projects */}
       <section className="mx-auto my-5 w-7/8 text-center">
         <div className="mb-5 flex items-center justify-center gap-x-5">
-          <h2 className="text-xl">FEATURED PROJECTS</h2>
+          <h2 className="text-2xl">FEATURED PROJECTS</h2>
 
           <Link
             href="/projects"
@@ -118,6 +138,6 @@ export default async function Home({ params }: LangParams) {
           ))}
         </div>
       </section>
-    </>
+    </main>
   );
 }

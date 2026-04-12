@@ -7,34 +7,14 @@ import TailwindCSS from "../components/icons/tailwindcss";
 import TypeScript from "../components/icons/typescript";
 import { JSX } from "react";
 
-type FeaturedSkill = { icon: JSX.Element; name: string; href: string };
+type FeaturedSkill = { icon: JSX.Element; name: string };
 
 export const featuredSkills: FeaturedSkill[] = [
-  { icon: <Nextjs />, name: "Next.js", href: "https://nextjs.org/" },
-  { icon: <React />, name: "React", href: "https://react.dev/" },
-  {
-    icon: <TypeScript />,
-    name: "TypeScript",
-    href: "https://www.typescriptlang.org/",
-  },
-  {
-    icon: <TailwindCSS />,
-    name: "Tailwind CSS",
-    href: "https://tailwindcss.com/",
-  },
-  {
-    icon: <Express />,
-    name: "Express",
-    href: "https://expressjs.com/",
-  },
-  {
-    icon: <Laravel />,
-    name: "Laravel",
-    href: "https://laravel.com/",
-  },
-  {
-    icon: <Git />,
-    name: "Git",
-    href: "https://git-scm.com/",
-  },
+  { icon: <Nextjs />, name: "Next.js" },
+  { icon: <React size={80} color="#bfbfbf" />, name: "React" },
+  { icon: <TypeScript />, name: "TypeScript" },
+  { icon: <TailwindCSS />, name: "Tailwind CSS" },
+  { icon: <Express />, name: "Express" },
+  { icon: <Laravel />, name: "Laravel" },
+  { icon: <Git />, name: "Git" },
 ];
