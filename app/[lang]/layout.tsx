@@ -1,5 +1,6 @@
 import { LangParams } from "@/i18n";
 import { Space_Grotesk } from "next/font/google";
+import Footer from "@/app/components/footer";
 import Nav from "@/app/components/nav";
 import "@/app/globals.css";
 
@@ -24,7 +25,9 @@ export default async function RootLayout({
 
         {children}
 
-        {/* TODO: Create footer */}
+        <hr className="border-neutral/50 mx-auto w-7/8" />
+
+        <Footer />
       </body>
     </html>
   );
