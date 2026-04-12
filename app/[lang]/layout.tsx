@@ -18,6 +18,10 @@ export default async function RootLayout({
 
   return (
     <html lang={lang}>
+      <head>
+        <meta name="apple-mobile-web-app-title" content="JB" />
+      </head>
+
       <body
         className={`bg-secondary text-neutral ${spaceGrotesk.className} antialiased`}
       >
