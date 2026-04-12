@@ -1,4 +1,4 @@
-import { CarouselImg } from "../types";
+import { CarouselImg } from "@/types";
 
 export type Project = {
   featured?: boolean;

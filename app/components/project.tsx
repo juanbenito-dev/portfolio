@@ -1,7 +1,7 @@
-import { Project as ProjectType } from "../data/projects";
-import Carousel from "./carousel";
-import ArrowAngularTopRight from "./icons/arrow-angular-top-right";
-import Code from "./icons/code";
+import Carousel from "@/components/Carousel";
+import ArrowAngularTopRight from "@/components/icons/ArrowAngularTopRight";
+import Code from "@/components/icons/Code";
+import { Project as ProjectType } from "@/data/projects";
 
 type ProjectProps = Omit<ProjectType, "featured">;
 

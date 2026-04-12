@@ -1,8 +1,8 @@
 "use client";
 
-import { CarouselImg } from "../types";
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
+import { CarouselImg } from "@/types";
 
 type CarouselProps = {
   imgs: CarouselImg[];

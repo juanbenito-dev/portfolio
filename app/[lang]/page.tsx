@@ -1,14 +1,14 @@
-import Eye from "../components/icons/eye";
-import GitHub from "../components/icons/github";
-import LinkedIn from "../components/icons/linkedin";
-import Project from "../components/project";
-import { featuredSkills } from "../data/featured-skills";
-import { projects } from "../data/projects";
-import { getDictionary } from "./dictionaries";
-import { LangParams } from "@/i18n";
+import { LangParams } from "i18n";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import Project from "@/components/Project";
+import Eye from "@/components/icons/Eye";
+import GitHub from "@/components/icons/GitHub";
+import LinkedIn from "@/components/icons/LinkedIn";
+import { featuredSkills } from "@/data/featured-skills";
+import { projects } from "@/data/projects";
+import { getDictionary } from "@/dictionaries";
 
 export const metadata: Metadata = {
   title: "Juan Benito | Web Developer",

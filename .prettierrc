@@ -3,6 +3,6 @@
     "@trivago/prettier-plugin-sort-imports",
     "prettier-plugin-tailwindcss"
   ],
-  "importOrder": ["^@/app/(.*)$"],
+  "importOrder": ["^@/(.*)$"],
   "importOrderSortSpecifiers": true
 }
