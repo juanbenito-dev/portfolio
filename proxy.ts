@@ -10,7 +10,7 @@ function getLocale(request: NextRequest): Locale {
     },
   }).languages();
 
-  const defaultLocale: Locale = "es";
+  const defaultLocale: Locale = "en";
 
   const locale = match(
     requestedLocales,
