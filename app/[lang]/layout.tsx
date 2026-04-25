@@ -1,4 +1,5 @@
 import { LangParams } from "i18n";
+import { ThemeProvider } from "next-themes";
 import { Space_Grotesk } from "next/font/google";
 import Footer from "@/components/Footer";
 import Nav from "@/components/Nav";
@@ -23,15 +24,17 @@ export default async function RootLayout({
       </head>
 
       <body
-        className={`bg-secondary text-neutral ${spaceGrotesk.className} antialiased`}
+        className={`bg-secondary text-neutral mx-auto w-7/8 space-y-5 ${spaceGrotesk.className} antialiased`}
       >
-        <Nav />
+        <ThemeProvider>
+          <Nav />
 
-        {children}
+          <main className="space-y-5">{children}</main>
 
-        <hr className="border-neutral/50 mx-auto w-7/8" />
+          <hr className="border-neutral/50" />
 
-        <Footer />
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

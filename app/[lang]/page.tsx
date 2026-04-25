@@ -26,11 +26,11 @@ export default async function Home({ params }: LangParams) {
   const dict = await getDictionary(lang);
 
   return (
-    <main>
+    <>
       {/* "Available" button */}
       <Link
         href="/contact"
-        className="bg-primary mx-auto my-5 flex w-36 items-center justify-center gap-x-4 rounded-xl p-3 text-left transition hover:brightness-110"
+        className="bg-primary mx-auto flex w-36 items-center justify-center gap-x-4 rounded-xl p-3 text-left transition hover:brightness-110"
       >
         <span className="relative flex h-3 w-3">
           <span className="bg-neutral absolute inline-flex h-full w-full animate-ping rounded-full opacity-75"></span>
@@ -41,7 +41,7 @@ export default async function Home({ params }: LangParams) {
       </Link>
 
       {/* Introduction */}
-      <section className="bg-tertiary mx-auto flex w-7/8 flex-col items-center gap-5 rounded-xl p-5 text-center">
+      <section className="bg-tertiary flex flex-col items-center gap-5 rounded-xl p-5 text-center">
         <h1 className="text-2xl">
           Hey, it's{" "}
           <Link
@@ -90,7 +90,7 @@ export default async function Home({ params }: LangParams) {
       </section>
 
       {/* "+X..." cards */}
-      <section className="mx-auto my-5 flex w-7/8 gap-x-5">
+      <section className="flex gap-x-5">
         <p className="bg-tertiary flex-1 rounded-xl p-5 text-center">
           <strong className="block text-5xl">+3</strong> YEARS IN THE FIELD
         </p>
@@ -101,7 +101,7 @@ export default async function Home({ params }: LangParams) {
       </section>
 
       {/* Featured skills */}
-      <section className="m-5 text-center">
+      <section className="text-center">
         <h2 className="mb-5 text-2xl">FEATURED SKILLS</h2>
 
         <div className="flex flex-wrap justify-center gap-5">
@@ -119,8 +119,8 @@ export default async function Home({ params }: LangParams) {
       </section>
 
       {/* Featured projects */}
-      <section className="mx-auto my-5 w-7/8 text-center">
-        <div className="mb-5 flex items-center justify-center gap-x-5">
+      <section className="space-y-5 text-center">
+        <div className="flex items-center justify-center gap-x-5">
           <h2 className="text-2xl">FEATURED PROJECTS</h2>
 
           <Link
@@ -132,12 +132,12 @@ export default async function Home({ params }: LangParams) {
           </Link>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-5">
+        <div className="flex flex-col justify-center gap-y-5">
           {featuredProjects.map((featuredProject) => (
             <Project key={featuredProject.name} {...featuredProject} />
           ))}
         </div>
       </section>
-    </main>
+    </>
   );
 }

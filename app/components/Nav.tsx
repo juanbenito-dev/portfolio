@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const links = [
   { name: "About", href: "/about" },
@@ -9,7 +10,7 @@ const links = [
 
 export default function Nav() {
   return (
-    <header className="bg-secondary/50 sticky top-5 z-10 mx-auto my-5 w-7/8 overflow-hidden rounded-xl p-4">
+    <header className="bg-secondary/50 sticky top-5 z-10 my-5 overflow-hidden rounded-xl p-4">
       <div className="absolute inset-0 h-[200%] backdrop-blur-lg"></div>
 
       <div className="relative flex items-center justify-between">
@@ -31,6 +32,8 @@ export default function Nav() {
             ))}
           </ul>
         </nav>
+
+        <ThemeToggle />
       </div>
     </header>
   );

@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
 @theme {
   /* Buttons (main CTA), links, active states & important highlights */
   --color-primary: #8a6a63;
@@ -12,4 +14,47 @@
 
   /* Body text, secondary text, icons & borders (with opacity) */
   --color-neutral: #bfbfbf;
+}
+
+[data-theme="dark"] {
+  --color-primary: #9c7e77;
+  --color-secondary: #f2f2f2;
+  --color-tertiary: #d9d9d9;
+  --color-neutral: #404040;
+}
+
+/* View transitions for theme changes */
+::view-transition-group(root) {
+  animation-duration: 0.7s;
+  animation-timing-function: var(--expo-out);
+}
+::view-transition-new(root) {
+  animation-name: reveal-light;
+  animation-fill-mode: both;
+}
+::view-transition-old(root),
+.dark::view-transition-old(root) {
+  animation: none;
+  animation-fill-mode: both;
+  z-index: -1;
+}
+.dark::view-transition-new(root) {
+  animation-name: reveal-dark;
+  animation-fill-mode: both;
+}
+@keyframes reveal-dark {
+  from {
+    clip-path: polygon(50% -71%, -50% 71%, -50% 71%, 50% -71%);
+  }
+  to {
+    clip-path: polygon(50% -71%, -50% 71%, 50% 171%, 171% 50%);
+  }
+}
+@keyframes reveal-light {
+  from {
+    clip-path: polygon(171% 50%, 50% 171%, 50% 171%, 171% 50%);
+  }
+  to {
+    clip-path: polygon(171% 50%, 50% 171%, -50% 71%, 50% -71%);
+  }
 }
