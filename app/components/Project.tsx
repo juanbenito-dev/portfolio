@@ -1,6 +1,9 @@
+import {
+  ArrowAngularTopRightOutlined,
+  Code1Outlined,
+} from "@lineiconshq/free-icons";
+import Lineicons from "@lineiconshq/react-lineicons";
 import Carousel from "@/components/Carousel";
-import ArrowAngularTopRight from "@/components/icons/ArrowAngularTopRight";
-import Code from "@/components/icons/Code";
 import { Project as ProjectType } from "@/data/projects";
 
 type ProjectProps = Omit<ProjectType, "featured">;
@@ -26,7 +29,7 @@ export default function Project({
           {techStack.map((tech) => (
             <span
               key={tech}
-              className="border-neutral/50 rounded-xl border px-2 py-1"
+              className="border-neutral-2/50 rounded-xl border px-2 py-1"
             >
               {tech}
             </span>
@@ -43,7 +46,7 @@ export default function Project({
             target="_blank"
             className="flex items-center gap-x-2.5"
           >
-            Visit <ArrowAngularTopRight />
+            Visit <Lineicons icon={ArrowAngularTopRightOutlined} size={20} />
           </a>
 
           <a
@@ -51,7 +54,7 @@ export default function Project({
             target="_blank"
             className="flex items-center gap-x-2.5"
           >
-            Code <Code />
+            Code <Lineicons icon={Code1Outlined} size={20} />
           </a>
         </div>
       </div>

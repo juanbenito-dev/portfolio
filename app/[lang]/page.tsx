@@ -1,24 +1,46 @@
+import {
+  ExpressjsOutlined,
+  EyeSolid,
+  GitOutlined,
+  GithubOutlined,
+  IconData,
+  LaravelOutlined,
+  LinkedinOutlined,
+  NextjsOutlined,
+  ReactOutlined,
+  TailwindcssOutlined,
+  TypescriptOutlined,
+} from "@lineiconshq/free-icons";
+import Lineicons from "@lineiconshq/react-lineicons";
 import { LangParams } from "i18n";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Project from "@/components/Project";
-import Eye from "@/components/icons/Eye";
-import GitHub from "@/components/icons/GitHub";
-import LinkedIn from "@/components/icons/LinkedIn";
-import { featuredSkills } from "@/data/featured-skills";
 import { projects } from "@/data/projects";
 import { getDictionary } from "@/dictionaries";
+
+type FeaturedSkill = { icon: IconData; name: string };
+
+const featuredSkills: FeaturedSkill[] = [
+  { icon: NextjsOutlined, name: "Next.js" },
+  { icon: ReactOutlined, name: "React" },
+  { icon: TypescriptOutlined, name: "TypeScript" },
+  { icon: TailwindcssOutlined, name: "Tailwind CSS" },
+  { icon: ExpressjsOutlined, name: "Express" },
+  { icon: LaravelOutlined, name: "Laravel" },
+  { icon: GitOutlined, name: "Git" },
+];
+
+const featuredProjects = projects
+  .filter((project) => project.featured)
+  .map(({ featured, ...project }) => project);
 
 export const metadata: Metadata = {
   title: "Juan Benito | Web Developer",
   description:
     "Juan Benito's portfolio, a web developer building modern, scalable web applications. Explore my skills, projects, and much more.",
 };
-
-const featuredProjects = projects
-  .filter((project) => project.featured)
-  .map(({ featured, ...project }) => project);
 
 export default async function Home({ params }: LangParams) {
   const { lang } = await params;
@@ -77,14 +99,14 @@ export default async function Home({ params }: LangParams) {
 
         <div className="flex gap-x-4">
           <a href="https://github.com/juanbenito-dev" target="_blank">
-            <GitHub />
+            <Lineicons icon={GithubOutlined} size={48} />
           </a>
 
           <a
             href="https://www.linkedin.com/in/juanbenito-dev/?locale=en-US"
             target="_blank"
           >
-            <LinkedIn />
+            <Lineicons icon={LinkedinOutlined} size={48} />
           </a>
         </div>
       </section>
@@ -108,10 +130,9 @@ export default async function Home({ params }: LangParams) {
           {featuredSkills.map((featuredSkill) => (
             <div
               key={featuredSkill.name}
-              className="border-neutral/50 flex w-32 flex-col items-center rounded-xl border p-2.5"
+              className="border-neutral-2/50 flex w-32 flex-col items-center rounded-xl border p-2.5"
             >
-              {featuredSkill.icon}
-
+              <Lineicons icon={featuredSkill.icon} size={80} />
               <span>{featuredSkill.name}</span>
             </div>
           ))}
@@ -128,7 +149,7 @@ export default async function Home({ params }: LangParams) {
             className="bg-primary flex items-center justify-center gap-x-2 rounded-xl p-3 transition hover:brightness-110"
           >
             See all
-            <Eye />
+            <Lineicons icon={EyeSolid} size={20} />
           </Link>
         </div>
 

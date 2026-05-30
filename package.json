@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.8.2",
+    "@lineiconshq/free-icons": "^1.0.6",
+    "@lineiconshq/react-lineicons": "^1.0.5",
     "@upstash/ratelimit": "^2.0.8",
     "@upstash/redis": "^1.37.0",
     "motion": "^12.38.0",

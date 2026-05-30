@@ -1,8 +1,8 @@
 "use client";
 
+import { MoonHalfRight5Solid, Sun1Solid } from "@lineiconshq/free-icons";
+import Lineicons from "@lineiconshq/react-lineicons";
 import { useTheme } from "next-themes";
-import Moon from "@/components/icons/Moon";
-import Sun from "@/components/icons/Sun";
 
 export default function ThemeToggle() {
   const { theme, setTheme, resolvedTheme } = useTheme();
@@ -19,7 +19,10 @@ export default function ThemeToggle() {
       type="button"
       onClick={() => document.startViewTransition(handleClick)}
     >
-      {isThemeDark ? <Moon /> : <Sun />}
+      <Lineicons
+        icon={isThemeDark ? MoonHalfRight5Solid : Sun1Solid}
+        size={20}
+      />
     </button>
   );
 }

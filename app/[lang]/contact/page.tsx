@@ -1,9 +1,9 @@
 "use client";
 
+import { CheckCircle1Outlined, Spinner3Solid } from "@lineiconshq/free-icons";
+import Lineicons from "@lineiconshq/react-lineicons";
 import { useActionState } from "react";
 import { sendEmail } from "@/actions";
-import CheckCircle from "@/components/icons/CheckCircle";
-import Spinner from "@/components/icons/Spinner";
 
 type ActionState = {
   errors?: {
@@ -107,7 +107,12 @@ export default function Contact() {
           >
             {isPending ? (
               <>
-                <Spinner /> Sending...
+                <Lineicons
+                  icon={Spinner3Solid}
+                  size={20}
+                  className="animate-spin"
+                />{" "}
+                Sending...
               </>
             ) : (
               "Send"
@@ -121,7 +126,12 @@ export default function Contact() {
             {!isPending &&
               ((state?.success && (
                 <>
-                  <CheckCircle /> {state?.success}
+                  <Lineicons
+                    icon={CheckCircle1Outlined}
+                    size={25}
+                    color="#00a63e"
+                  />{" "}
+                  {state?.success}
                 </>
               )) ||
                 state?.errors?.ratelimit ||
