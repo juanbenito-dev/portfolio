@@ -44,7 +44,7 @@ export default function Contact() {
             name="name"
             id="name"
             required
-            className="rounded-xl border border-neutral-50 px-3 py-2"
+            className="border-neutral-2 rounded-xl border px-3 py-2"
           />
           <p aria-live="polite" className="text-red-600">
             {state?.errors?.name}
@@ -60,7 +60,7 @@ export default function Contact() {
             name="email"
             id="email"
             required
-            className="rounded-xl border border-neutral-50 px-3 py-2"
+            className="border-neutral-2 rounded-xl border px-3 py-2"
           />
           <p aria-live="polite" className="text-red-500">
             {state?.errors?.email}
@@ -76,7 +76,7 @@ export default function Contact() {
             name="subject"
             id="subject"
             required
-            className="rounded-xl border border-neutral-50 px-3 py-2"
+            className="border-neutral-2 rounded-xl border px-3 py-2"
           />
           <p aria-live="polite" className="text-red-600">
             {state?.errors?.subject}
@@ -92,7 +92,7 @@ export default function Contact() {
             id="message"
             rows={5}
             required
-            className="resize-none rounded-xl border border-neutral-50 px-3 py-2"
+            className="border-neutral-2 resize-none rounded-xl border px-3 py-2"
           ></textarea>
           <p aria-live="polite" className="text-red-600">
             {state?.errors?.message}

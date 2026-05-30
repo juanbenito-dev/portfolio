@@ -33,15 +33,15 @@ export default async function Home({ params }: LangParams) {
         className="bg-primary mx-auto flex w-36 items-center justify-center gap-x-4 rounded-xl p-3 text-left transition hover:brightness-110"
       >
         <span className="relative flex h-3 w-3">
-          <span className="bg-neutral absolute inline-flex h-full w-full animate-ping rounded-full opacity-75"></span>
-          <span className="bg-neutral relative inline-flex h-3 w-3 rounded-full"></span>
+          <span className="bg-neutral-1 absolute inline-flex h-full w-full animate-ping rounded-full opacity-75"></span>
+          <span className="bg-neutral-1 relative inline-flex h-3 w-3 rounded-full"></span>
         </span>
 
         {dict.me.available}
       </Link>
 
       {/* Introduction */}
-      <section className="bg-tertiary flex flex-col items-center gap-5 rounded-xl p-5 text-center">
+      <section className="bg-secondary flex flex-col items-center gap-5 rounded-xl p-5 text-center">
         <h1 className="text-2xl">
           Hey, it's{" "}
           <Link
@@ -91,11 +91,11 @@ export default async function Home({ params }: LangParams) {
 
       {/* "+X..." cards */}
       <section className="flex gap-x-5">
-        <p className="bg-tertiary flex-1 rounded-xl p-5 text-center">
+        <p className="bg-secondary flex-1 rounded-xl p-5 text-center">
           <strong className="block text-5xl">+3</strong> YEARS IN THE FIELD
         </p>
 
-        <p className="bg-tertiary flex-1 rounded-xl p-5 text-center">
+        <p className="bg-secondary flex-1 rounded-xl p-5 text-center">
           <strong className="block text-5xl">+9</strong> PROJECTS COMPLETED
         </p>
       </section>

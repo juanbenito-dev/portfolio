@@ -24,14 +24,14 @@ export default async function RootLayout({
       </head>
 
       <body
-        className={`bg-secondary text-neutral mx-auto w-7/8 space-y-5 ${spaceGrotesk.className} antialiased`}
+        className={`bg-neutral-1 text-neutral-2 mx-auto w-7/8 space-y-5 ${spaceGrotesk.className} antialiased`}
       >
         <ThemeProvider>
           <Nav />
 
           <main className="space-y-5">{children}</main>
 
-          <hr className="border-neutral/50" />
+          <hr className="border-neutral-2/50" />
 
           <Footer />
         </ThemeProvider>

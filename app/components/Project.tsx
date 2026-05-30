@@ -37,7 +37,7 @@ export default function Project({
 
         <p>{description}</p>
 
-        <div className="text-primary flex items-center justify-between">
+        <div className="text-accent flex items-center justify-between">
           <a
             href={deploymentHref}
             target="_blank"
