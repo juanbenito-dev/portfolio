@@ -5,23 +5,37 @@ import {
 import Lineicons from "@lineiconshq/react-lineicons";
 import Carousel from "@/components/Carousel";
 import { Project as ProjectType } from "@/data/projects";
+import { CarouselMedia } from "@/types";
 
 type ProjectProps = Omit<ProjectType, "featured">;
 
 export default function Project({
-  carouselImgs,
+  imgs,
+  videos,
   techStack,
   name,
   description,
   deploymentHref,
-  sourceCodeHref,
+  sourceCode,
 }: ProjectProps) {
+  const media: CarouselMedia[] = [
+    ...(videos ?? []).map((video) => ({
+      type: "video" as const,
+      ...video,
+    })),
+    ...(imgs ?? []).map((img) => ({
+      type: "img" as const,
+      ...img,
+    })),
+  ];
+
+  const hasVideo = media.some((item) => item.type === "video");
+
   return (
-    <div className="bg-tertiary flex-1 rounded-xl">
+    <div className="bg-secondary flex-1 rounded-xl">
       <Carousel
-        imgs={carouselImgs}
-        parentClassName="h-60 rounded-t-xl"
-        imgsClassName="absolute h-full w-full object-cover rounded-t-xl"
+        media={media}
+        parentClassName={`${hasVideo ? "h-96" : "h-60"} rounded-t-xl`}
       />
 
       <div className="flex flex-col gap-y-5 p-5">
@@ -40,22 +54,37 @@ export default function Project({
 
         <p>{description}</p>
 
-        <div className="text-accent flex items-center justify-between">
-          <a
-            href={deploymentHref}
-            target="_blank"
-            className="flex items-center gap-x-2.5"
-          >
-            Visit <Lineicons icon={ArrowAngularTopRightOutlined} size={20} />
-          </a>
+        <div className="text-accent flex items-center justify-between gap-5">
+          {deploymentHref && (
+            <a
+              href={deploymentHref}
+              target="_blank"
+              className="group flex items-center gap-x-2.5"
+            >
+              Visit{" "}
+              <Lineicons
+                icon={ArrowAngularTopRightOutlined}
+                size={20}
+                className="transition-transform duration-200 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              />
+            </a>
+          )}
 
-          <a
-            href={sourceCodeHref}
-            target="_blank"
-            className="flex items-center gap-x-2.5"
-          >
-            Code <Lineicons icon={Code1Outlined} size={20} />
-          </a>
+          {sourceCode.map((repo) => (
+            <a
+              key={repo.label}
+              href={repo.href}
+              target="_blank"
+              className="group flex items-center gap-x-2.5"
+            >
+              {repo.label ?? "Code"}{" "}
+              <Lineicons
+                icon={Code1Outlined}
+                size={20}
+                className="transition-transform duration-200 ease-out group-hover:scale-110"
+              />
+            </a>
+          ))}
         </div>
       </div>
     </div>

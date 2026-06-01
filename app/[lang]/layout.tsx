@@ -24,7 +24,7 @@ export default async function RootLayout({
       </head>
 
       <body
-        className={`bg-neutral-1 text-neutral-2 mx-auto w-7/8 space-y-5 ${spaceGrotesk.className} antialiased`}
+        className={`bg-neutral-1 text-neutral-2 mx-auto w-7/8 space-y-5 sm:max-w-xl ${spaceGrotesk.className} antialiased`}
       >
         <ThemeProvider>
           <Nav />

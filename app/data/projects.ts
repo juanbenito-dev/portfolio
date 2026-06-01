@@ -1,42 +1,76 @@
-import { CarouselImg } from "@/types";
+import { CarouselImg, CarouselVideo } from "@/types";
 
 export type Project = {
   featured?: boolean;
-  carouselImgs: CarouselImg[];
+  imgs?: CarouselImg[];
+  videos?: CarouselVideo[];
   techStack: string[];
   name: string;
   description: string;
-  deploymentHref: string;
-  sourceCodeHref: string;
+  deploymentHref?: string;
+  sourceCode: SourceCodeRepo[];
 };
+
+export type SourceCodeRepo = { label?: string; href: string };
 
 export const projects: Project[] = [
   {
-    featured: false,
-    carouselImgs: [
+    featured: true,
+    videos: [
+      { src: "/projects/neokaotik/acolyte-tabs." },
+      { src: "/projects/neokaotik/maps." },
+      { src: "/projects/neokaotik/angelo-capture." },
+    ],
+    techStack: [
+      "TypeScript",
+      "React Native",
+      "Styled Components",
+      "Express",
+      "Socket.IO",
+      "MongoDB",
+    ],
+    name: "NeoKaotik",
+    description:
+      "A narrative, multiplayer mobile app set in a dark fantasy world, where players take on different roles and progress through a story of exploration, betrayal, and decision-making. The app combines Google/Firebase authentication, role and player status management, interactive maps, push notifications, real-time communication via sockets, QR code scanning, and integration with IoT hardware to link real-world actions to the game.",
+    sourceCode: [
       {
-        src: "/projects/old-mans-house/entrance.webp",
-        alt: "The entrance to the house of a mysterious old man",
+        label: "Client",
+        href: "https://github.com/juanbenito-dev/neokaotik-client",
       },
       {
-        src: "/projects/old-mans-house/living-room.webp",
-        alt: "The house's living room, filled with rather interesting paintings and other objects",
-      },
-      {
-        src: "/projects/old-mans-house/main-bedroom.webp",
-        alt: "The main bedroom, featuring an impressive crossbow and elegant furniture",
+        label: "Server",
+        href: "https://github.com/juanbenito-dev/neokaotik-server",
       },
     ],
-    techStack: ["HTML", "CSS", "JavaScript", "Bootstrap"],
-    name: "Old Man's House",
-    description:
-      "A website optimized for both mobile devices and computers that simulates a visit to the home of a mysterious old man...",
-    deploymentHref: "https://old-mans-house.vercel.app/",
-    sourceCodeHref: "https://github.com/juanbenito-dev/old-mans-house",
   },
   {
     featured: true,
-    carouselImgs: [
+    imgs: [
+      {
+        src: "/projects/the-potions-of-simon/start-screen.webp",
+        alt: "'The Potions of Simon' start screen",
+      },
+      {
+        src: "/projects/the-potions-of-simon/game.webp",
+        alt: "'The Potions of Simon' game (first turn)",
+      },
+      {
+        src: "/projects/the-potions-of-simon/defeat-modal.webp",
+        alt: "The defeat modal shown after failing the potions' sequence",
+      },
+    ],
+    techStack: ["React", "CSS"],
+    name: "The Potions of Simon",
+    description:
+      "A medieval-themed memory game inspired by 'Simon Says'. At the start of each turn, a sequence of potions lights up in a specific order. Then, players must reproduce it correctly. One mistake ends the run, challenging players to beat their best score.",
+    deploymentHref: "https://potions-simon.vercel.app/",
+    sourceCode: [
+      { href: "https://github.com/juanbenito-dev/the-potions-of-simon" },
+    ],
+  },
+  {
+    featured: false,
+    imgs: [
       {
         src: "/projects/chaoswb/main-menu.webp",
         alt: "'Chaos Within Chaos Beyond' video game's main menu",
@@ -62,29 +96,29 @@ export const projects: Project[] = [
     description:
       "Similar to the well-known 'Super Mario Bros.', this short but intense video game presents a clear challenge: escape from a cave filled with all kinds of threats.",
     deploymentHref: "https://chaoswb.onrender.com/",
-    sourceCodeHref: "https://github.com/juanbenito-dev/chaoswb",
+    sourceCode: [{ href: "https://github.com/juanbenito-dev/chaoswb" }],
   },
   {
-    featured: true,
-    carouselImgs: [
+    featured: false,
+    imgs: [
       {
-        src: "/projects/the-potions-of-simon/start-screen.webp",
-        alt: "'The Potions of Simon' start screen",
+        src: "/projects/old-mans-house/entrance.webp",
+        alt: "The entrance to the house of a mysterious old man",
       },
       {
-        src: "/projects/the-potions-of-simon/game.webp",
-        alt: "'The Potions of Simon' game (first turn)",
+        src: "/projects/old-mans-house/living-room.webp",
+        alt: "The house's living room, filled with rather interesting paintings and other objects",
       },
       {
-        src: "/projects/the-potions-of-simon/defeat-modal.webp",
-        alt: "The defeat modal shown after failing the potions' sequence",
+        src: "/projects/old-mans-house/main-bedroom.webp",
+        alt: "The main bedroom, featuring an impressive crossbow and elegant furniture",
       },
     ],
-    techStack: ["React", "CSS"],
-    name: "The Potions of Simon",
+    techStack: ["HTML", "CSS", "JavaScript", "Bootstrap"],
+    name: "Old Man's House",
     description:
-      "A medieval-themed memory game inspired by 'Simon Says'. At the start of each turn, a sequence of potions lights up in a specific order. Then, players must reproduce it correctly. One mistake ends the run, challenging players to beat their best score.",
-    deploymentHref: "https://potions-simon.vercel.app/",
-    sourceCodeHref: "https://github.com/juanbenito-dev/the-potions-of-simon",
+      "A website optimized for both mobile devices and computers that simulates a visit to the home of a mysterious old man...",
+    deploymentHref: "https://old-mans-house.vercel.app/",
+    sourceCode: [{ href: "https://github.com/juanbenito-dev/old-mans-house" }],
   },
 ];
