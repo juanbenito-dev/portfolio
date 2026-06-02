@@ -26,13 +26,14 @@ export default function Nav() {
         <nav>
           <ul className="flex items-center gap-x-5">
             {links.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="hover:text-accent transition-colors duration-300"
-              >
-                {link.name}
-              </Link>
+              <li key={link.name}>
+                <Link
+                  href={link.href}
+                  className="hover:text-accent transition-colors duration-300"
+                >
+                  {link.name}
+                </Link>
+              </li>
             ))}
           </ul>
         </nav>
