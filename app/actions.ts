@@ -22,7 +22,8 @@ export async function sendEmail(prevState: any, formData: FormData) {
   try {
     const { transporter } = await import("@/mailer");
     await transporter.sendMail({
-      from: validatedFields.data.email,
+      from: process.env.EMAIL,
+      replyTo: validatedFields.data.email,
       to: process.env.EMAIL,
       subject: `From ${validatedFields.data.name}: ${validatedFields.data.subject}`,
       text: validatedFields.data.message,
