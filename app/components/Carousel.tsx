@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "motion/react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { CarouselMedia } from "@/types";
 
 type CarouselProps = {
@@ -11,20 +11,20 @@ type CarouselProps = {
 
 export default function Carousel({ media, parentClassName }: CarouselProps) {
   const [mediaIndex, setMediaIndex] = useState(0);
-  const videoRef = useRef<HTMLVideoElement | null>(null);
 
   const currentMedia = media[mediaIndex];
 
-  useEffect(() => {
-    const intervalTimerId = setInterval(
-      () =>
-        setMediaIndex((prevMediaIndex) =>
-          prevMediaIndex === media.length - 1 ? 0 : prevMediaIndex + 1,
-        ),
-      currentMedia.type === "video" ? videoRef.current!.duration * 1000 : 5000,
+  function advance() {
+    setMediaIndex((prevMediaIndex) =>
+      prevMediaIndex === media.length - 1 ? 0 : prevMediaIndex + 1,
     );
+  }
 
-    return () => clearInterval(intervalTimerId);
+  useEffect(() => {
+    if (currentMedia.type === "video") return;
+
+    const timerId = setTimeout(advance, 5000);
+    return () => clearTimeout(timerId);
   }, [mediaIndex]);
 
   return (
@@ -46,12 +46,12 @@ export default function Carousel({ media, parentClassName }: CarouselProps) {
                 // Second video: Foreground clip shown at its natural aspect ratio
                 <video
                   key={currentMedia.src + i}
-                  ref={videoRef}
                   poster={currentMedia.poster}
                   autoPlay
                   muted
                   playsInline
                   aria-hidden={i === 0}
+                  onEnded={i === 1 ? advance : undefined}
                   className={`absolute inset-0 h-full w-full ${i === 0 ? "scale-110 object-cover blur-xl" : "object-contain"}`}
                 >
                   <source src={currentMedia.src + "webm"} type="video/webm" />
