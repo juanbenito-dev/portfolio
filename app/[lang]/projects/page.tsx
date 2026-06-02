@@ -1,5 +1,6 @@
 import { Folder1Outlined } from "@lineiconshq/free-icons";
 import Lineicons from "@lineiconshq/react-lineicons";
+import { Metadata } from "next";
 import Project from "@/components/Project";
 import { projects } from "@/data/projects";
 

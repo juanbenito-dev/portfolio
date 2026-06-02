@@ -13,7 +13,7 @@ import {
   TypescriptOutlined,
 } from "@lineiconshq/free-icons";
 import Lineicons from "@lineiconshq/react-lineicons";
-import { LangParams } from "i18n";
+import { LangParams, Locale } from "i18n";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
 export default async function Home({ params }: LangParams) {
   const { lang } = await params;
 
-  const dict = await getDictionary(lang);
+  const dict = await getDictionary(lang as Locale);
 
   return (
     <>

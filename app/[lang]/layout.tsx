@@ -1,4 +1,5 @@
 import { LangParams } from "i18n";
+import { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import { Space_Grotesk } from "next/font/google";
 import Footer from "@/components/Footer";
