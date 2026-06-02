@@ -2,7 +2,6 @@ import {
   Bulb4Outlined,
   ColourPalette3Outlined,
   Gears3Outlined,
-  GithubOutlined,
   Globe1Outlined,
   GraduationCap1Outlined,
   IconData,
@@ -190,21 +189,10 @@ export default function About() {
 
         <div className="flex items-center gap-4">
           <a
-            href="https://github.com/juanbenito-dev"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <Lineicons
-              icon={GithubOutlined}
-              size={40}
-              className="transition duration-300 hover:scale-110"
-            />
-          </a>
-
-          <a
             href="https://www.linkedin.com/in/juanbenito-dev/?locale=en-US"
             target="_blank"
             rel="noreferrer"
+            aria-label="Juan Benito on LinkedIn"
           >
             <Lineicons
               icon={LinkedinOutlined}
@@ -215,7 +203,7 @@ export default function About() {
 
           <Link
             href="/contact"
-            className="bg-neutral-1 text-neutral-2 rounded-xl px-6 py-3 font-bold whitespace-nowrap shadow-sm transition duration-300 hover:-translate-y-0.5 hover:shadow-md"
+            className="bg-neutral-1 text-neutral-2 rounded-xl px-4 py-3 font-bold whitespace-nowrap shadow-sm transition duration-300 hover:-translate-y-0.5 hover:shadow-md"
           >
             Get in touch
           </Link>

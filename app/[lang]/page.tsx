@@ -1,4 +1,5 @@
 import {
+  Download1Outlined,
   ExpressjsOutlined,
   EyeSolid,
   GitOutlined,
@@ -14,7 +15,6 @@ import {
 } from "@lineiconshq/free-icons";
 import Lineicons from "@lineiconshq/react-lineicons";
 import { LangParams, Locale } from "i18n";
-import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Project from "@/components/Project";
@@ -37,11 +37,6 @@ const featuredSkills: FeaturedSkill[] = [
 const featuredProjects = projects
   .filter((project) => project.featured)
   .map(({ featured, ...project }) => project);
-
-export const metadata: Metadata = {
-  description:
-    "Juan Benito's portfolio, a web developer building modern, scalable web applications. Explore my skills, projects, and much more.",
-};
 
 export default async function Home({ params }: LangParams) {
   const { lang } = await params;
@@ -99,11 +94,21 @@ export default async function Home({ params }: LangParams) {
             enjoyable.
           </p>
 
-          <div className="flex gap-x-4">
+          <div className="flex items-center gap-x-4">
+            <a
+              href="/en-cv.pdf"
+              download
+              className="bg-primary text-neutral-2 flex items-center gap-x-2 rounded-xl px-4 py-3 font-bold shadow-sm transition duration-300 hover:-translate-y-0.5 hover:shadow-md hover:brightness-110"
+            >
+              <Lineicons icon={Download1Outlined} size={20} />
+              CV
+            </a>
+
             <a
               href="https://github.com/juanbenito-dev"
               target="_blank"
               rel="noreferrer"
+              aria-label="Juan Benito on GitHub"
             >
               <Lineicons
                 icon={GithubOutlined}
@@ -116,6 +121,7 @@ export default async function Home({ params }: LangParams) {
               href="https://www.linkedin.com/in/juanbenito-dev/?locale=en-US"
               target="_blank"
               rel="noreferrer"
+              aria-label="Juan Benito on LinkedIn"
             >
               <Lineicons
                 icon={LinkedinOutlined}
@@ -135,7 +141,7 @@ export default async function Home({ params }: LangParams) {
         </p>
 
         <p className="bg-secondary flex-1 rounded-xl p-5 text-center shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
-          <strong className="text-accent block text-5xl">+9</strong> PROJECTS
+          <strong className="text-accent block text-5xl">+8</strong> PROJECTS
           COMPLETED
         </p>
       </section>
@@ -168,7 +174,7 @@ export default async function Home({ params }: LangParams) {
 
           <Link
             href="/projects"
-            className="bg-primary flex items-center justify-center gap-x-2 rounded-xl p-3 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:shadow-md hover:brightness-110"
+            className="bg-primary flex items-center justify-center gap-x-2 rounded-xl px-4 py-3 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:shadow-md hover:brightness-110"
           >
             See all
             <Lineicons icon={EyeSolid} size={20} />

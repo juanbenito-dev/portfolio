@@ -17,6 +17,7 @@ export default function ThemeToggle() {
   return (
     <button
       type="button"
+      aria-label="Toggle color theme"
       onClick={() => document.startViewTransition(handleClick)}
       className="cursor-pointer transition-transform duration-300 hover:scale-110"
     >

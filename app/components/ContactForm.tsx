@@ -122,7 +122,7 @@ export default function ContactForm() {
           <button
             type="submit"
             disabled={isPending}
-            className="bg-primary flex cursor-pointer items-center justify-center gap-x-4 justify-self-start rounded-xl px-6 py-3 transition duration-300 enabled:hover:brightness-110 disabled:cursor-not-allowed"
+            className="bg-primary flex cursor-pointer items-center justify-center gap-x-4 justify-self-start rounded-xl px-4 py-3 transition duration-300 enabled:hover:brightness-110 disabled:cursor-not-allowed"
           >
             {isPending ? (
               <>
@@ -140,7 +140,7 @@ export default function ContactForm() {
 
           <p
             aria-live="polite"
-            className={`flex items-center gap-x-2 text-center ${state?.success ? "text-green-600" : "text-red-600"}`}
+            className={`flex items-center gap-x-2 text-center ${state?.success ? "text-green-700" : "text-red-600"}`}
           >
             {!isPending &&
               ((state?.success && (
