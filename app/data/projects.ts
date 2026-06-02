@@ -17,9 +17,18 @@ export const projects: Project[] = [
   {
     featured: true,
     videos: [
-      { src: "/projects/neokaotik/acolyte-tabs." },
-      { src: "/projects/neokaotik/maps." },
-      { src: "/projects/neokaotik/angelo-capture." },
+      {
+        src: "/projects/neokaotik/acolyte-tabs.",
+        poster: "/projects/neokaotik/acolyte-tabs.webp",
+      },
+      {
+        src: "/projects/neokaotik/maps.",
+        poster: "/projects/neokaotik/maps.webp",
+      },
+      {
+        src: "/projects/neokaotik/angelo-capture.",
+        poster: "/projects/neokaotik/angelo-capture.webp",
+      },
     ],
     techStack: [
       "TypeScript",
