@@ -1,6 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "motion/react";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { CarouselMedia } from "@/types";
 
@@ -59,10 +60,12 @@ export default function Carousel({ media, parentClassName }: CarouselProps) {
                 </video>
               ))
           ) : (
-            <img
+            <Image
               src={currentMedia.src}
               alt={currentMedia.alt}
-              className="absolute inset-0 h-full w-full object-cover"
+              fill
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-cover"
             />
           )}
         </motion.div>

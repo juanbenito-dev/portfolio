@@ -1,7 +1,7 @@
 import {
   Download1Outlined,
   ExpressjsOutlined,
-  EyeSolid,
+  EyeOutlined,
   GitOutlined,
   GithubOutlined,
   IconData,
@@ -177,7 +177,7 @@ export default async function Home({ params }: LangParams) {
             className="bg-primary flex items-center justify-center gap-x-2 rounded-xl px-4 py-3 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:shadow-md hover:brightness-110"
           >
             See all
-            <Lineicons icon={EyeSolid} size={20} />
+            <Lineicons icon={EyeOutlined} size={20} />
           </Link>
         </div>
 

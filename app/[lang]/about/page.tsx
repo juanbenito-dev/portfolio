@@ -90,7 +90,7 @@ export default function About() {
               <Lineicons icon={fact.icon} size={28} />
             </span>
 
-            <span className="text-xs tracking-wide uppercase opacity-70">
+            <span className="text-sm tracking-wide uppercase opacity-70">
               {fact.label}
             </span>
 

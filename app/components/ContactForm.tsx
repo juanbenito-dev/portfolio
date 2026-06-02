@@ -41,7 +41,7 @@ export default function ContactForm() {
         </span>
 
         <span className="flex flex-col">
-          <span className="text-accent text-xs tracking-wide">
+          <span className="text-accent text-sm tracking-wide">
             RESPONSE TIME
           </span>
 
