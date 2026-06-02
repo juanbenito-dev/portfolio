@@ -18,7 +18,7 @@ export default function ThemeToggle() {
     <button
       type="button"
       onClick={() => document.startViewTransition(handleClick)}
-      className="cursor-pointer"
+      className="cursor-pointer transition-transform duration-300 hover:scale-110"
     >
       <Lineicons
         icon={isThemeDark ? MoonHalfRight5Solid : Sun1Solid}

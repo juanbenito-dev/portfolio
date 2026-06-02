@@ -10,11 +10,11 @@ const links = [
 
 export default function Nav() {
   return (
-    <header className="bg-neutral-1/50 sticky top-5 z-10 my-5 overflow-hidden rounded-xl p-4">
+    <header className="bg-neutral-1/50 border-neutral-2/25 sticky top-5 z-10 mt-5 mb-10 overflow-hidden rounded-full border p-4">
       <div className="absolute inset-0 h-[200%] backdrop-blur-lg"></div>
 
       <div className="relative flex items-center justify-between">
-        <Link href="/">
+        <Link href="/" className="transition duration-300 hover:scale-110">
           <Image
             src="/jb.svg"
             alt="'JB' logo (short for Juan Benito)"
@@ -26,7 +26,11 @@ export default function Nav() {
         <nav>
           <ul className="flex items-center gap-x-5">
             {links.map((link) => (
-              <Link key={link.name} href={link.href}>
+              <Link
+                key={link.name}
+                href={link.href}
+                className="hover:text-accent transition-colors duration-300"
+              >
                 {link.name}
               </Link>
             ))}

@@ -54,7 +54,7 @@ export default async function Home({ params }: LangParams) {
       {/* "Available" button */}
       <Link
         href="/contact"
-        className="bg-primary mx-auto flex w-36 items-center justify-center gap-x-4 rounded-xl p-3 text-left transition hover:brightness-110"
+        className="bg-primary mx-auto mb-5 flex w-36 items-center justify-center gap-x-4 rounded-xl p-3 text-left shadow-sm transition duration-300 hover:-translate-y-0.5 hover:shadow-md hover:brightness-110"
       >
         <span className="relative flex h-3 w-3">
           <span className="bg-neutral-2 absolute inline-flex h-full w-full animate-ping rounded-full opacity-75"></span>
@@ -65,87 +65,93 @@ export default async function Home({ params }: LangParams) {
       </Link>
 
       {/* Introduction */}
-      <section className="bg-secondary flex flex-col items-center gap-5 rounded-xl p-5 text-center">
-        <h1 className="text-2xl">
-          Hey, it's{" "}
-          <Link
-            href="/about"
-            className="decoration-neutral-2 decoration font-bold underline decoration-dashed decoration-2 underline-offset-2 transition hover:decoration-solid"
-          >
-            Juan Benito
-          </Link>
-          !
-        </h1>
-
+      <section className="bg-secondary mb-5 flex flex-col items-center gap-5 rounded-xl p-5 text-center shadow-sm lg:flex-row lg:gap-8 lg:p-8 lg:text-left">
         <Image
           src="/my-avatar.webp"
           alt="Juan Benito's 3D avatar"
           width={300}
           height={300}
           loading="eager"
-          className="rounded-xl"
+          className="rounded-xl lg:shrink-0"
         />
 
-        <p>
-          A <strong>web developer</strong> focused on building modern, fast,
-          user-centered experiences. I approach development as a balance between
-          structure and creativity, writing clean, well-organized code with
-          strong attention to detail.
-        </p>
+        <div className="flex flex-col items-center gap-5 lg:items-start">
+          <h1 className="text-2xl">
+            Hey, it's{" "}
+            <Link
+              href="/about"
+              className="decoration-neutral-2 decoration font-bold underline decoration-dashed decoration-2 underline-offset-2 transition hover:decoration-solid"
+            >
+              Juan Benito
+            </Link>
+            !
+          </h1>
 
-        <p>
-          I'm always exploring new tools and ideas, using each project as an
-          opportunity to grow and create work that is both meaningful and
-          enjoyable.
-        </p>
+          <p className="max-w-prose">
+            A <strong>web developer</strong> focused on building modern, fast,
+            user-centered experiences. I approach development as a balance
+            between structure and creativity, writing clean, well-organized code
+            with strong attention to detail.
+          </p>
 
-        <div className="flex gap-x-4">
-          <a
-            href="https://github.com/juanbenito-dev"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <Lineicons
-              icon={GithubOutlined}
-              size={48}
-              className="transition duration-200 hover:scale-110"
-            />
-          </a>
+          <p className="max-w-prose">
+            I'm always exploring new tools and ideas, using each project as an
+            opportunity to grow and create work that is both meaningful and
+            enjoyable.
+          </p>
 
-          <a
-            href="https://www.linkedin.com/in/juanbenito-dev/?locale=en-US"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <Lineicons
-              icon={LinkedinOutlined}
-              size={48}
-              className="transition duration-200 hover:scale-110"
-            />
-          </a>
+          <div className="flex gap-x-4">
+            <a
+              href="https://github.com/juanbenito-dev"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Lineicons
+                icon={GithubOutlined}
+                size={48}
+                className="transition duration-300 hover:scale-110"
+              />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/juanbenito-dev/?locale=en-US"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Lineicons
+                icon={LinkedinOutlined}
+                size={48}
+                className="transition duration-300 hover:scale-110"
+              />
+            </a>
+          </div>
         </div>
       </section>
 
       {/* "+X..." cards */}
-      <section className="flex gap-x-5">
-        <p className="bg-secondary flex-1 rounded-xl p-5 text-center">
-          <strong className="block text-5xl">+3</strong> YEARS IN THE FIELD
+      <section className="flex gap-5">
+        <p className="bg-secondary flex-1 rounded-xl p-5 text-center shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+          <strong className="text-accent block text-5xl">+3</strong> YEARS IN
+          THE FIELD
         </p>
 
-        <p className="bg-secondary flex-1 rounded-xl p-5 text-center">
-          <strong className="block text-5xl">+9</strong> PROJECTS COMPLETED
+        <p className="bg-secondary flex-1 rounded-xl p-5 text-center shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+          <strong className="text-accent block text-5xl">+9</strong> PROJECTS
+          COMPLETED
         </p>
       </section>
 
       {/* Featured skills */}
       <section className="text-center">
-        <h2 className="mb-5 text-2xl">FEATURED SKILLS</h2>
+        <h2 className="mb-5 text-2xl font-bold tracking-wide">
+          Featured Skills
+        </h2>
 
         <div className="flex flex-wrap justify-center gap-5">
           {featuredSkills.map((featuredSkill) => (
             <div
               key={featuredSkill.name}
-              className="border-neutral-2/50 flex w-32 flex-col items-center rounded-xl border p-2.5"
+              className="bg-secondary flex w-32 flex-col items-center rounded-xl p-2.5 shadow-sm transition duration-300 hover:-translate-y-1.5 hover:shadow-lg"
             >
               <Lineicons icon={featuredSkill.icon} size={80} />
               <span>{featuredSkill.name}</span>
@@ -156,19 +162,21 @@ export default async function Home({ params }: LangParams) {
 
       {/* Featured projects */}
       <section className="space-y-5 text-center">
-        <div className="flex items-center justify-center gap-x-5">
-          <h2 className="flex-1 text-2xl sm:flex-auto">FEATURED PROJECTS</h2>
+        <div className="flex items-center justify-between">
+          <h2 className="text-2xl font-bold tracking-wide">
+            Featured Projects
+          </h2>
 
           <Link
             href="/projects"
-            className="bg-primary flex flex-1 items-center justify-center gap-x-2 rounded-xl p-3 transition hover:brightness-110 sm:flex-auto"
+            className="bg-primary flex items-center justify-center gap-x-2 rounded-xl p-3 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:shadow-md hover:brightness-110"
           >
             See all
             <Lineicons icon={EyeSolid} size={20} />
           </Link>
         </div>
 
-        <div className="flex flex-col justify-center gap-y-5">
+        <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
           {featuredProjects.map((featuredProject) => (
             <Project key={featuredProject.name} {...featuredProject} />
           ))}
