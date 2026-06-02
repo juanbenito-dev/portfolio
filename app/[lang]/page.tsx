@@ -39,7 +39,6 @@ const featuredProjects = projects
   .map(({ featured, ...project }) => project);
 
 export const metadata: Metadata = {
-  title: "Juan Benito | Web Developer",
   description:
     "Juan Benito's portfolio, a web developer building modern, scalable web applications. Explore my skills, projects, and much more.",
 };

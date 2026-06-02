@@ -11,6 +11,13 @@ type RootLayoutProps = {
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
+export const metadata: Metadata = {
+  title: {
+    template: "%s • Juan Benito",
+    default: "Juan Benito",
+  },
+};
+
 export default async function RootLayout({
   children,
   params,
