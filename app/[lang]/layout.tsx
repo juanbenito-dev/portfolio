@@ -12,17 +12,21 @@ type RootLayoutProps = {
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
+const description =
+  "Juan Benito's portfolio, a web developer building modern, scalable web applications. Explore my skills, projects, and much more.";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://juanbenito.vercel.app"),
   title: {
     template: "%s • Juan Benito",
     default: "Juan Benito",
   },
-  description:
-    "Juan Benito's portfolio, a web developer building modern, scalable web applications. Explore my skills, projects, and much more.",
+  description,
   openGraph: {
     type: "website",
     siteName: "Juan Benito",
+    title: "Juan Benito",
+    description,
     locale: "en_US",
     url: "/",
   },

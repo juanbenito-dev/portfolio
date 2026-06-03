@@ -135,12 +135,12 @@ export default async function Home({ params }: LangParams) {
 
       {/* "+X..." cards */}
       <section className="flex gap-5">
-        <p className="bg-secondary flex-1 rounded-xl p-5 text-center shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+        <p className="bg-secondary flex-1 content-center rounded-xl p-5 text-center shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
           <strong className="text-accent block text-5xl">+3</strong> YEARS IN
           THE FIELD
         </p>
 
-        <p className="bg-secondary flex-1 rounded-xl p-5 text-center shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+        <p className="bg-secondary flex-1 content-center rounded-xl p-5 text-center shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
           <strong className="text-accent block text-5xl">+8</strong> PROJECTS
           COMPLETED
         </p>

@@ -84,7 +84,7 @@ export default function About() {
         {facts.map((fact) => (
           <div
             key={fact.label}
-            className="bg-secondary flex flex-col items-center gap-2.5 rounded-xl p-5 text-center shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+            className="bg-secondary flex flex-col items-center justify-center gap-2.5 rounded-xl p-5 text-center shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
           >
             <span className="bg-primary/40 text-accent flex h-14 w-14 shrink-0 items-center justify-center rounded-full">
               <Lineicons icon={fact.icon} size={28} />
