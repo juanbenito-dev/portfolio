@@ -21,10 +21,11 @@ export async function sendEmail(prevState: any, formData: FormData) {
 
   try {
     const { transporter } = await import("@/mailer");
+    const myEmail = "benitoayestaranjuan@gmail.com";
     await transporter.sendMail({
-      from: process.env.EMAIL,
+      from: myEmail,
       replyTo: validatedFields.data.email,
-      to: process.env.EMAIL,
+      to: myEmail,
       subject: `From ${validatedFields.data.name}: ${validatedFields.data.subject}`,
       text: validatedFields.data.message,
     });
