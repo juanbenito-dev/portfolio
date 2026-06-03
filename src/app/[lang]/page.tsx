@@ -14,12 +14,12 @@ import {
   TypescriptOutlined,
 } from "@lineiconshq/free-icons";
 import Lineicons from "@lineiconshq/react-lineicons";
-import { LangParams, Locale } from "i18n";
 import Image from "next/image";
 import Link from "next/link";
 import Project from "@/components/Project";
 import { projects } from "@/data/projects";
 import { getDictionary } from "@/dictionaries";
+import { LangParams, Locale } from "@/types/i18n";
 
 type FeaturedSkill = { icon: IconData; name: string };
 

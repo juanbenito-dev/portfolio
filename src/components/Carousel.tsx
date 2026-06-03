@@ -3,7 +3,7 @@
 import { AnimatePresence, motion } from "motion/react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { CarouselMedia } from "@/types";
+import { CarouselMedia } from "@/types/carousel";
 
 type CarouselProps = {
   media: CarouselMedia[];

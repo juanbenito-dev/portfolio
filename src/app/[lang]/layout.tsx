@@ -1,10 +1,10 @@
-import { LangParams } from "i18n";
 import { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import { Space_Grotesk } from "next/font/google";
+import "@/app/globals.css";
 import Footer from "@/components/Footer";
 import Nav from "@/components/Nav";
-import "@/globals.css";
+import { LangParams } from "@/types/i18n";
 
 type RootLayoutProps = {
   children: React.ReactNode;

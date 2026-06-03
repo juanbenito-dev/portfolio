@@ -5,7 +5,7 @@ import {
 import Lineicons from "@lineiconshq/react-lineicons";
 import Carousel from "@/components/Carousel";
 import { Project as ProjectType } from "@/data/projects";
-import { CarouselMedia } from "@/types";
+import { CarouselMedia } from "@/types/carousel";
 
 type ProjectProps = Omit<ProjectType, "featured">;
 
