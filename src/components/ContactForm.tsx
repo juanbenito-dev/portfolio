@@ -140,7 +140,7 @@ export default function ContactForm() {
 
           <p
             aria-live="polite"
-            className={`flex items-center gap-x-2 text-center ${state?.success ? "text-green-700" : "text-red-600"}`}
+            className={`flex items-center gap-x-2 text-left ${state?.success ? "text-green-700" : "text-red-600"}`}
           >
             {!isPending &&
               ((state?.success && (
