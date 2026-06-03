@@ -13,7 +13,7 @@ type RootLayoutProps = {
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
 const description =
-  "Juan Benito's portfolio, a web developer building modern, scalable web applications. Explore my skills, projects, and much more.";
+  "Juan Benito's portfolio, a full-stack web developer building modern, scalable web applications. Explore my skills, projects, and much more.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://juanbenito.vercel.app"),

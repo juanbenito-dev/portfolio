@@ -82,10 +82,10 @@ export default async function Home({ params }: LangParams) {
           </h1>
 
           <p className="max-w-prose">
-            A <strong>web developer</strong> focused on building modern, fast,
-            user-centered experiences. I approach development as a balance
-            between structure and creativity, writing clean, well-organized code
-            with strong attention to detail.
+            A <strong>full-stack web developer</strong> focused on building
+            modern, fast, user-centered experiences. I approach development as a
+            balance between structure and creativity, writing clean,
+            well-organized code with strong attention to detail.
           </p>
 
           <p className="max-w-prose">
